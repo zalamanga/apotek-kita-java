@@ -1,0 +1,1 @@
+CREATE TABLE tbl_user (id_user VARCHAR(32) PRIMARY KEY, username VARCHAR(40) NOT NULL UNIQUE, password VARCHAR(250) NOT NULL, sex CHAR(1) NOT NULL CHECK (sex IN ('M','F')), dob DATE NOT NULL, phone_number VARCHAR(30) NOT NULL, email VARCHAR(254) NOT NULL, address VARCHAR(250) NOT NULL, role VARCHAR(20) NOT NULL CHECK (role IN ('Administrator','Cashier')));

@@ -1,0 +1,12 @@
+/target/
+/.idea/
+/.vscode/
+/build/
+/dist/
+/.env
+/.env.*
+!/.env.example
+*.iml
+*.log
+*.jasper
+*.sql.gz

@@ -1,0 +1,22 @@
+name: apotek-kita-demo
+services:
+  db:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: apotek_kita_demo
+      MYSQL_USER: apotek_demo
+      MYSQL_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in .env}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Set MYSQL_ROOT_PASSWORD in .env}
+    ports:
+      - "127.0.0.1:13316:3306"
+    mem_limit: 384m
+    command: ["--innodb-buffer-pool-size=96M", "--max-connections=30"]
+    volumes:
+      - apotek-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "--silent"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+volumes:
+  apotek-data:
