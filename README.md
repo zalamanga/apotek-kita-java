@@ -113,6 +113,8 @@ Tes ini hanya menerima `jdbc:mysql://localhost:13316/apotek_kita_demo`. Ia membu
 
 ## Struktur dan batas
 
+[Alur kode](docs/CODE_FLOW.md) menghubungkan form Swing, sesi login, pemeriksaan peran dan transaksi JDBC ke file sumbernya.
+
 `src/main/java/GUI` berisi jendela dan interface login asal, `JAVA/LoginProcess` menangani proses masuk, `DB/DatabaseConnection` membaca konfigurasi, dan `apotek` memuat service, validasi, hash serta setup. Semua query berisi nilai user memakai parameter; koneksi, statement dan result set ditutup setelah digunakan. Daftar dibatasi ke 500 user.
 
 Tidak ada data asli, menu apotek yang belum diimplementasikan, fitur cetak yang belum selesai, atau berkas build/IDE lama dalam repo. Aplikasi ini belum menyediakan stok obat, transaksi apotek, reset password lewat email, audit aktivitas atau migrasi data lama. Lisensi sumber/aset tidak ditemukan pada root proyek asal; repo ini tidak menetapkan lisensi baru atau mengklaim kepemilikan gambar pihak lain.
